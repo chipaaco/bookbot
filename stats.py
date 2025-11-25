@@ -1,18 +1,19 @@
-def get_num_words():
+def get_num_words(path):
     word_number = 0
-    with open("books/frankenstein.txt") as f:
+    with open(path) as f:
         file_contents = f.read()
     for word in file_contents.split():
         word_number += 1
     print(f"Found {word_number} total words")
 
-def get_num_times_each_word():
+def get_num_times_each_word(path):
     raw_chars = []
     dictionary = {}
 
     # lista con caracteres
     # limpiado tambien de saltos y caracteres especiales asdfasdf
-    with open("books/frankenstein.txt") as f:
+    # with open("books/frankenstein.txt") as f:
+    with open(path) as f:
         for digit in f.read():
             if digit != '\ufeff' and digit != "\n":
                 raw_chars.append(digit.lower())
