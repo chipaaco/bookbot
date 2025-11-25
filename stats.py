@@ -30,3 +30,18 @@ def get_num_times_each_word():
 
     # imprimir la wea
     return dictionary
+
+def sorted_list_dict(dict_wcs):
+    report = []
+
+    # 1. crea lista de diccionarios
+    for keyvalue in dict_wcs:
+        report.append({"char" : keyvalue, "num" : dict_wcs[keyvalue]})
+
+    # 2. la ordena de mayor a menor
+    def helper_num(dicts):
+        return dicts["num"]
+    report.sort(reverse=True, key=helper_num)
+
+    # 3. return the wea
+    return report
